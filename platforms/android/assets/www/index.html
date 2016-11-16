@@ -1,0 +1,365 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+	<!--
+        Customize the content security policy in the meta tag below as needed. Add 'unsafe-inline' to default-src to enable inline JavaScript.
+        For details, see http://go.microsoft.com/fwlink/?LinkID=617521
+    -->
+        <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *; frame-src http://sdce.edu/class-schedule;">
+        
+        <meta name="format-detection" content="telephone=no">
+        <meta name="msapplication-tap-highlight" content="no">
+        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
+  
+  <title></title>
+  <link rel="stylesheet" href="jquery.mobile-1.4.5.min.css">
+  <link rel="stylesheet" href="newcolors.min.css">
+  <link rel="stylesheet" href="codiqa.ext.css">   
+</head>
+<body>
+<!-- Home Section Start-->
+<section data-role="page" data-theme="b" data-theme="b" id="home">
+    <header  data-role="header" data-position="fixed">
+        <h1>
+            mySDCE App
+        </h1>
+        <nav data-role="navbar" data-iconpos="top">
+            <ul>
+                <li>
+                    <a href="#home" data-transition="flip"  data-icon="home"
+                    class="ui-btn-active ui-state-persist">
+                        Home
+                    </a>
+                </li>
+                <li>
+                    <a href="#art" data-transition="flip"  data-icon="edit">
+                        Art
+                    </a>
+                </li>
+                <li>
+                    <a href="#computer" data-transition="flip"  data-icon="gear">
+                        Computer
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    <article role="main" class="ui-content">
+        <h2>
+            Welcome<span class="welcomeMsg"></span>
+        </h2>
+		<div class="divImgWidth">
+			<img src="images/org_image.jpg" class="">
+		</div>
+		<p>Educational access and lifelong learning opportunities. Keep up to date with our class offerings and create a class list.</p>
+        <div class="ui-grid-a">
+            <div class="ui-block-a">
+				<a href="#about" data-role="button" data-icon="info" data-transition="pop">About</a>
+            </div>
+            <div class="ui-block-b">
+				<a href="#classes" data-role="button" data-icon="bars" data-transition="slideup">My Classes</a>
+            </div>
+            <div class="ui-block-a">
+			
+            </div>
+            <div class="ui-block-b">
+			
+            </div>
+        </div>
+    </article>
+    <footer  data-role="footer" data-position="fixed">
+        <h4>
+            Copyright &copy; 2016 Kiran's Apps
+        </h4>
+    </footer>
+</section>
+<!-- Home Section END -->
+<!-- Art Section Start -->
+<section data-role="page" data-theme="b" id="art">
+	<aside data-role="panel" data-display="overlay" id="artCal">
+		<a href="#art" data-role="button" data-rel="close" data-icon="delete" data-iconpos="notext">Close</a>
+		<h1>Art Calendar</h1>
+		<h2>August</h2>
+			<ul>
+				<li>Student Art Show</li>
+				<li>Water Color Expo</li>
+			</ul>
+		<h2>September</h2>
+			<ul>
+				<li>Faculty Art Show</li>
+			</ul>
+		<h2>October</h2>
+			<ul>
+				<li>Oil Painting Gala</li>
+				<li>Meauseum Trip</li>
+				<li>digitalART Showcase</li>
+			</ul>
+	</aside>
+    <header  data-role="header" data-position="fixed">
+        <h1>
+            Art Classes
+        </h1>
+        <nav data-role="navbar" data-iconpos="top">
+            <ul>
+                <li>
+                    <a href="#home" data-transition="flip"  data-icon="home"
+                    >
+                        Home
+                    </a>
+                </li>
+                <li>
+                    <a href="#art" data-transition="flip"  data-icon="edit"
+					class="ui-btn-active ui-state-persist">
+                        Art
+                    </a>
+                </li>
+                <li>
+                    <a href="#computer" data-transition="flip"  data-icon="gear">
+                        Computer
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    <article role="main" class="ui-content">
+        <h2>
+            Take an art class<span class="welcomeMsg"></span>
+        </h2>
+        <div data-role="collapsible-set">
+            <div data-role="collapsible">
+                <h3>
+                    ART101
+                </h3>
+				<p>
+					Introduction to various art media for students with disabilities. Primary focus is on appreciation, tools, techniques and production of individual art projects.
+				</p>
+            </div>
+            <div data-role="collapsible">
+                <h3>
+                    ART102
+                </h3>
+				<p>
+					Introduction to crafts involving wood, metal, fibers, ceramics, glass, etc. Make items that are both decorative and utilitarian.
+				</p>
+            </div>
+            <div data-role="collapsible">
+                <h3>
+                    ART103
+                </h3>
+				<p>
+					Learn about the exciting world of Makeup Artistry and  the essential techniques to work on yourself and others.
+				</p>
+            </div>
+        </div>
+        <div class="ui-grid-a">
+            <div class="ui-block-a">
+			<a href="#artCal" data-role="button" data-icon="calendar">Calendar</a>
+            </div>
+            <div class="ui-block-b">
+			<a href="#" data-url="http://sdce.edu/class-schedule" data-role="button" data-icon="bullets" class="btnURL">Catalog</a>
+            </div>
+            <div class="ui-block-a">
+			
+            </div>
+            <div class="ui-block-b">
+			
+            </div>
+        </div>
+    </article>
+    <footer  data-role="footer" data-position="fixed">
+        <h4>
+            Copyright &copy; 2016 Kiran's Apps
+        </h4>
+    </footer>
+</section>
+<!-- Art Section END -->
+<!-- Computers Section Start -->
+<section data-role="page" data-theme="b" id="computer">
+    <header  data-role="header" data-position="fixed">
+        <h1>
+            Computer Classes
+        </h1>
+        <nav data-role="navbar" data-iconpos="top">
+            <ul>
+                <li>
+                    <a href="#home" data-transition="flip"  data-icon="home"
+                    >
+                        Home
+                    </a>
+                </li>
+                <li>
+                    <a href="#art" data-transition="flip"  data-icon="edit">
+                        Art
+                    </a>
+                </li>
+                <li>
+                    <a href="#computer" data-transition="flip"  data-icon="gear"
+					class="ui-btn-active ui-state-persist">
+                        Computer
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    <article role="main" class="ui-content">
+        <h2>
+            Take a computer class<span class="welcomeMsg"></span>
+        </h2>
+        <ul data-role="listview" data-inset="true">
+            <li data-role="list-divider" role="heading">
+                Basic Classes
+            </li>
+            <li >
+                <a href="#comBasPC" data-transition="slide">
+                    COM101 - Intro to PCs
+                </a>
+            </li>
+            <li >
+                <a href="#comBasMac" data-transition="slide">
+                    COM102 - Intro to Macs
+                </a>
+            </li>
+            <li data-role="list-divider" role="heading">
+                Intermediate Classes
+            </li>
+            <li >
+                <a href="#comInt" data-transition="slide">
+                    COM201 - Intro to Linux
+                </a>
+            </li>
+			<li data-role="list-divider" role="heading">
+                Advanced Classes
+            </li>
+            <li >
+                <a href="#comAdv" data-transition="slide">
+                    COM301 - Augmented Reality
+                </a>
+            </li>
+        </ul>
+    </article>
+    <footer  data-role="footer" data-position="fixed">
+        <h4>
+            Copyright &copy; 2016 Kiran's Apps
+        </h4>
+    </footer>
+</section>
+<!-- Computers Section END -->
+<!-- COM101 Section Start -->
+<section data-role="page" data-theme="b" id="comBasPC">
+	<header data-role="header" data-add-back-btn="true" data-position="fixed">
+		<h1>COM101</h1>
+	</header>
+	<article role="main" class="ui-content">
+		<h2>Intro to PCs</h2>
+		<p>Microsoft Windows (or simply Windows) is a metafamily of graphical operating systems developed, marketed, and sold by Microsoft. It consists of several families of operating systems, each of which cater to a certain sector of the computing industry with the OS typically associated with IBM PC compatible architecture. Active Windows families include Windows NT, Windows Embedded and Windows Phone; these may encompass subfamilies, e.g. Windows Embedded Compact (Windows CE) or Windows Server. Defunct Windows families include Windows 9x; Windows 10 Mobile is an active product, unrelated to the defunct family Windows Mobile.</p>
+	</article>
+</section>
+<!-- COM101 Section END -->
+<!-- COM102 Section Start -->
+<section data-role="page" data-theme="b" id="comBasMac">
+	<header data-role="header" data-add-back-btn="true" data-position="fixed">
+		<h1>COM102</h1>
+	</header>
+	<article role="main" class="ui-content">
+		<h2>Intro to Macs</h2>
+		<p>macOS (originally named Mac OS X until 2012, then rebranded to OS X until 2016) is the current series of Unix-based graphical operating systems developed and marketed by Apple Inc. designed to run on Apple's Macintosh computers, having been preinstalled on all Macs since 2002. Within the market of desktop, laptop and home computers, and by web usage, it is the second most widely used desktop OS after Microsoft Windows.</p>
+	</article>
+</section>
+<!-- COM102 Section END -->
+<!-- COM201 Section Start -->
+<section data-role="page" data-theme="b" id="comInt">
+	<header data-role="header" data-add-back-btn="true" data-position="fixed">
+		<h1>COM201</h1>
+	</header>
+	<article role="main" class="ui-content">
+		<h2>Intro to Linux</h2>
+		<p>Linux is a Unix-like and mostly POSIX-compliant computer operating system (OS) assembled under the model of free and open-source software development and distribution. The defining component of Linux is the Linux kernel, an operating system kernel first released on September 17, 1991 by Linus Torvalds. The Free Software Foundation uses the name GNU/Linux to describe the operating system, which has led to some controversy (and that term doesn't apply to Android).</p>
+	</article>
+</section>
+<!-- COM201 Section END -->
+<!-- COM301 Section Start -->
+<section data-role="page" data-theme="b" id="comAdv">
+	<header data-role="header" data-add-back-btn="true" data-position="fixed">
+		<h1>COM301</h1>
+	</header>
+	<article role="main" class="ui-content">
+		<h2>Intro to Augmented Reality</h2>
+		<p>Augmented reality (AR) is a live direct or indirect view of a physical, real-world environment whose elements are augmented (or supplemented) by computer-generated sensory input such as sound, video, graphics or GPS data. It is related to a more general concept called mediated reality, in which a view of reality is modified (possibly even diminished rather than augmented) by a computer. As a result, the technology functions by enhancing one’s current perception of reality. By contrast, virtual reality replaces the real world with a simulated one. Augmentation is conventionally in real-time and in semantic context with environmental elements, such as sports scores on TV during a match. With the help of advanced AR technology (e.g. adding computer vision and object recognition) the information about the surrounding real world of the user becomes interactive and digitally manipulable. Information about the environment and its objects is overlaid on the real world. This information can be virtual or real, e.g. seeing other real sensed or measured information such as electromagnetic radio waves overlaid in exact alignment with where they actually are in space. Augmented reality brings out the components of the digital world into a person's perceived real world. One example is an AR Helmet for construction workers which displays information about the construction sites.</p>
+	</article>
+</section>
+<!-- COM301 Section END -->
+<!-- About Section Start -->
+<section data-role="page" data-theme="b" data-dialog="true" id="about">
+	<header data-role="header">
+		<h1>About</h1>
+	</header>
+	<article role="main" class="ui-content">
+		<h2>San Diego Continuing Ed.</h2>
+		<img src="images/ce-logo-vert.png" class="imgWidth">
+		<p>San Diego Continuing Education commits to student success and community enrichment.</p>
+		<a href="#" data-role="button" data-icon="user" id="btnName">Personalize</a>
+		<a href="map.html" rel="external" data-role="button" data-icon="navigation">Directions</a>
+	</article>
+</section>
+<!-- About Section END -->
+<!-- Class Section START -->
+<section data-role="page" data-theme="b" id="classes">
+	<header data-role="header" data-add-back-btn="true">
+		<h1>My Classes</h1>
+	</header>
+	<article role="main" class="ui-content">
+		<form id="formClass">
+			<label for="fieldCRN">CRN: </label><input type="text" placeholder="1828J" name="fieldCRN" id="fieldCRN"><br>
+			<label for="fieldName">Name: </label><input type="text" placeholder="Android I" name="fieldName" id="fieldName"><br>
+			<label for="fieldInst">Instructor: </label><input type="text" placeholder="Campos" name="fieldInst" id="fieldInst"><br>
+			  
+			<div class="ui-grid-b">
+				<div class="ui-block-a">
+					<input type="reset" value="Reset" id="btnReset">
+				</div>
+				<div class="ui-block-b">
+					<input type="button" value="Save" id="btnSave">
+				</div>
+				<div class="ui-block-c">
+					<input type="button" value="Show" id="btnShow">
+				</div>
+			</div>
+		</form>
+		<div id="divShow"></div>
+		
+		<div data-role="popup" class="ui-content" id="popSaved">Class saved!</div>
+		<div data-role="popup" class="ui-content" id="popUpdated">Class updated!</div>
+		<div data-role="popup" class="ui-content" id="popDeleted">Class deleted!</div>
+		<div data-role="popup" class="ui-content" id="popErrorCRN">ERROR: Fill all fields!</div>
+		<div data-role="popup" class="ui-content" id="popErrorDupe">ERROR: Class already saved!</div>
+		<div data-role="popup" class="ui-content" id="popErrorNull">ERROR: Class does not exist!</div>
+		<div data-role="popup" data-dialog="true" id="popClassUpdate">
+			<a href="#" data-rel="back" class="ui-btn ui-corner-all ui-shadow ui-btn-a ui-icon-delete ui-btn-icon-notext ui-btn-right"></a>
+			<header data-role="header">
+				<h1 id="h1Update">Update</h1>
+			</header>
+			<article role="main" class="ui-content">
+				<div id="divEdit"></div>
+			</article>
+		</div>
+	</article>
+</section>
+<!-- Class Section END -->
+
+  <!-- jQuery and jQuery Mobile -->
+  <script src="jquery-1.11.3.min.js"></script>
+  <script src="jquery.mobile-1.4.5.min.js"></script>
+  <script src="cordova.js"></script>
+  <script src="pouchdb-6.0.7.min.js"></script>
+  <script src="codiqa.ext.js"></script>
+</body>
+</html>
+
+<!--
+	Name: 			Kiran Palla <palla@palla.com>
+	Project: 		mySDCE
+	Version: 		1.1.2016115
+	Date: 			2016-11-15
+	Description: 	The unofficial San Diego Continuing Education App
+-->

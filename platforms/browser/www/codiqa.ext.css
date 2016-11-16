@@ -1,0 +1,121 @@
+@font-face {
+    font-family: 'anagramregular';
+    src: url('fonts/Anagram-webfont.eot');
+    src: url('fonts/Anagram-webfont.eot?#iefix') format('embedded-opentype'),
+         url('fonts/Anagram-webfont.woff') format('woff'),
+         url('fonts/Anagram-webfont.ttf') format('truetype'),
+         url('fonts/Anagram-webfont.svg#anagramregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'armwrestlerbold';
+    src: url('fonts/ArmWrestler-webfont.eot');
+    src: url('fonts/ArmWrestler-webfont.eot?#iefix') format('embedded-opentype'),
+         url('fonts/ArmWrestler-webfont.woff') format('woff'),
+         url('fonts/ArmWrestler-webfont.ttf') format('truetype'),
+         url('fonts/ArmWrestler-webfont.svg#armwrestlerbold') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+body {
+    -webkit-touch-callout: none;                /* prevent callout to copy image, etc when tap to hold */
+    -webkit-text-size-adjust: none;             /* prevent webkit from resizing text to fit */
+    -webkit-user-select: none;                  /* prevent copy paste, to allow, change 'none' to 'text' */
+    background-color: #aa22ff;
+    font-family: 'RobotoRegular', 'Droid Sans', 'Segoe UI', Segoe, 'San Francisco', 'Helvetica Neue', Helvetica, Arial, Geneva, sans-serif;
+    font-size: 105%;
+}
+
+aside h1 {
+	font-size: 2em; /* pt (Points) are Absolute measurements, which we avoid */
+					/* Instead use Relative measurements, like % or em or en */
+	text-align: center;
+}
+
+aside .ui-btn {		/* The jQM Class .ui-btn is used to target the button */
+	float: right;
+}
+
+.imgWidth {
+	width: 100%;
+}
+
+.divImgWidth {
+	width: 100%;
+	overflow: hidden;
+	border-radius: 5%;
+	border: 2px solid gray;
+	line-height: 0;
+}
+
+#tableClass {
+	background-color: whitesmoke;
+	width: 100%;
+	margin: auto;
+	word-wrap: break-word;
+	table-layout: fixed;
+	text-shadow: none;
+}
+
+#tableClass th {
+	background-color: purple;
+	color: white;
+}
+
+#tableClass .btnPencil,
+#tableClass .thEmpty {
+	width: 10%;
+	text-align: center;
+}
+
+#tableClass tr:nth-of-type(odd) {
+	background-color: rgb(0, 50, 200);
+	color: white;
+}
+
+#tableClass tr:nth-of-type(even) {
+	background-color: rgba(0, 50, 200, 0.5);
+	color: white;
+}
+
+.ui-header .ui-title {
+	margin: 0 15%;
+	font-size: 1.1em;
+	font-family: 'anagramregular';
+}
+
+.ui-content {
+	padding: 0.25em 1em 0.25em 1em;
+}
+
+.ui-content h2 {
+	margin-top: 0.5em;
+	font-family: 'armwrestlerbold';
+}
+
+.ui-overlay-a, .ui-overlay-b {
+	background-color: #ffb733;
+}
+
+.ui-dialog-contain > .ui-content {	
+	background-color: white;
+}
+
+/*
+	Name: 			Kiran Palla <palla@palla.com>
+	Project: 		mySDCE
+	Version: 		1.1.2016115
+	Date: 			2016-11-15
+	Description: 	The unofficial San Diego Continuing Education App
+*/
+
+
+
+
+
+
+

@@ -1,0 +1,147 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">		<!-- Using Unicode character set  -->
+		<!--
+        Customize the content security policy in the meta tag below as needed. Add 'unsafe-inline' to default-src to enable inline JavaScript.
+        For details, see http://go.microsoft.com/fwlink/?LinkID=617521
+		
+        <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *; frame-src http://sdce.edu/class-schedule;">
+        -->
+        <meta name="format-detection" content="telephone=no">
+        <meta name="msapplication-tap-highlight" content="no">
+        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
+  
+  <title></title>
+  <link rel="stylesheet" href="jquery.mobile-1.4.5.min.css">
+  <link rel="stylesheet" href="newcolors.min.css">
+  <link rel="stylesheet" href="codiqa.ext.css">   
+    </head>
+    <body>
+		<section data-role="page" data-theme="b" id="map">
+            <header data-role="header" data-position="fixed">
+			<a href="javascript: history.go(-1)" data-role="button" data-icon="back">Go Back</a>	<!-- Adding some JavaScript to the button, so it takes us back one point in History -->
+				<h1>Directions</h1>
+            </header>
+            <article role="main" class="ui-content">   
+                <div class="ui-bar-a ui-corner-all ui-shadow" style="padding: 1.25em;">	<!-- Create an element with rounded corners and drop shadow -->
+                    <div id="mapCanvas" style="height:350px;"></div>
+                </div>
+                <div data-role="fieldcontain">		<!-- Create a Form for input -->
+                    <label for="mapDestination" style="display: none;">Target Destination:</label>																<!-- Create, and hide, a Form label -->
+                    <input type="text" name="mapDestination" id="mapDestination" value="8355 Aero Dr. San Diego, California 92123" style="display: none;" />	<!-- Create, and hide, an input text box with our map Destination -->
+                </div>
+                <a href="#" id="btnDirections" data-role="button" data-inline="true" data-icon="bullets">Get Directions</a>		<!-- Set up a button for getting directions -->
+                <div id="results" style="display: none;">																		<!-- Display turn-by-turn directions -->
+                    <div id="directions"></div>
+                </div>
+            </article>
+        </section>    
+		
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>	<!-- Online reference to jQuery -->
+        <script src="jquery.mobile-1.4.5.min.js"></script>											<!-- Local reference to jQuery Mobile -->
+		<script src="https://maps.googleapis.com/maps/api/js?v=3"></script>	<!-- Online reference to Google Maps API (JavaScript)-->
+		<script>
+            var map,															// Create variables to hold various map elements
+                currentPosition,
+                directionsDisplay, 
+                directionsService
+				basicLat = 32.7065645,											// San Diego Convention Center Latitude
+				basicLon = -117.1640287;										// San Diego Convention Center Longitude
+			
+            $(document).live("pagebeforeshow", "#map", function() {				// Before the "map" element shows, 
+                navigator.geolocation.getCurrentPosition(locSuccess, locError); // Use HTML5 Geolocation to get the current position
+            });
+
+            $(document).on("click", "#btnDirections", function(e){				// Set up the Event Handler for "btnDirections"
+                e.preventDefault();												// Prevent default Form submission behaviour
+                calculateRoute();												// Call the calculateRoute() function
+            });
+			
+			function locSuccess(position) {										// If Geolocation was successful, 
+				initialize(position.coords.latitude, position.coords.longitude);// Initialize the starting map with the User's coordinates
+            }
+			
+			function locError(error) {											// If Geolocation was a failure,
+               initialize(basicLat, basicLon);									// Initialize the starting map with a static, predefined latitude & longitude
+				console.log(error);
+			}
+
+            function initialize(lat, lon) {										// Define initialize() function, with two parameters (latitude, longitude)
+                directionsDisplay = new google.maps.DirectionsRenderer(); 		// Instantiate a new Google maps Directions Renderer object
+                directionsService = new google.maps.DirectionsService();		// Instantiate a new Google maps Directions Service object
+                currentPosition = new google.maps.LatLng(lat, lon);				// Instantiate a new Google maps object based on the User's latitude and longitude
+
+                map = new google.maps.Map(document.getElementById('mapCanvas'), {	// Instantiate a new Google maps object to the "mapCanvas" element,
+                   zoom: 15,														// With a Zoom level of 15,
+                   center: currentPosition,											// Center the map to the current position,
+                   mapTypeId: google.maps.MapTypeId.ROADMAP							// Set the type of map to a "Road Map"
+                 });
+
+                directionsDisplay.setMap(map);										// Call the setMap() method of the directionsDisplay object
+
+                 var currentPositionMarker = new google.maps.Marker({				// Instantiate a new Google maps Marker object,
+                    position: currentPosition,
+                    map: map,
+                    title: "Here is where you are!"											// "title" property displays whatever message you would like
+                });
+
+                var infowindow = new google.maps.InfoWindow();													// Instantiate a new Google maps Info Window object
+                google.maps.event.addListener(currentPositionMarker, 'click', function() {						// Event handler for when Current Position Marker is clicked:
+                    infowindow.setContent("Current position:<br> Latitude: " + lat + " and Longitude: " + lon);	// Display, on-screen, the User's Latitude and Longitude
+                    infowindow.open(map, currentPositionMarker);												// open() method of the infoWindow object
+                });
+            } // END initialize()
+
+            function calculateRoute() {		// Define calculateRoute() function
+				var targetDestination = $("#mapDestination").val(); // Store the value of the Map Destination
+                if (currentPosition && currentPosition != '' && targetDestination && targetDestination != '') {	// If a currentPosition exists, AND a currentPosition IS NOT empty, AND  targetDestination exists, AND a targetDestination IS NOT empty,
+                    var request = {												// Create a "request" object with,
+                        origin : currentPosition, 								// "origin" Property
+                        destination : targetDestination,						// "destination" Property
+                        travelMode : google.maps.DirectionsTravelMode["DRIVING"]// "travelMode" Property set to (car) Driving
+                    };
+
+                    directionsService.route(request, function(response, status) {				// Call route() Method of the directionService object, with a "request" Argument, resulting in a callback function (which returns a "response" and "status" object
+                        if (status == google.maps.DirectionsStatus.OK) {						// If the "status" object returned is OK,
+                            directionsDisplay.setPanel(document.getElementById("directions"));	// Set up setPanel() method to display navigation results in the "directions" <div>
+                            directionsDisplay.setDirections(response); 							// Use setDirections() method to display the driving directions, step-by-step
+
+                            /*  // OPTIONAL: Displays step-by-step directions, as basic JavaScript PopUps
+                                var myRoute = response.routes[0].legs[0];
+                                for (var i = 0; i < myRoute.steps.length; i++) {
+                                    alert(myRoute.steps[i].instructions);
+                                }
+                            */
+							
+                            $("#results").show();		// Using jQuery, show the <div> that displays the turn-by-turn directions
+                        } else {						// Or else, if "status" object did not return OK,
+                            $("#results").hide();		// Using jQuery, hide the <div> that displays the turn-by-turn directions
+                        }
+                    }); // END of route() 
+                } else {								// Or else, if no valid Map Destination,
+                    $("#results").hide();				// Using jQuery, hide the <div> that displays the turn-by-turn directions
+                }
+            } // END calculateRoute()
+        </script>
+		<script src="cordova.js"></script>
+		<script src="pouchdb-6.0.7.min.js"></script>
+		<script src="codiqa.ext.js"></script>
+		<!-- Original concept from: -->
+		<!-- http://stackoverflow.com/questions/13345479/clean-example-of-directions-with-google-maps-in-jquery-mobile -->
+		<!--
+			Name: 			StackOverFlow
+			Project: 		GoogleMaps for jQuery-mobile
+			Version: 		
+			Date: 			
+			Description: 	
+		-->
+    </body>
+</html>
+<!--
+	Name: 			Kiran Palla <palla@palla.com>
+	Project: 		mySDCE
+	Version: 		1.1.2016115
+	Date: 			2016-11-15
+	Description: 	The unofficial San Diego Continuing Education App
+-->

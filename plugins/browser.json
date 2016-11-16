@@ -1,0 +1,45 @@
+{
+    "prepare_queue": {
+        "installed": [],
+        "uninstalled": []
+    },
+    "config_munge": {
+        "files": {}
+    },
+    "installed_plugins": {
+        "cordova-plugin-whitelist": {
+            "PACKAGE_NAME": "com.jones.template"
+        },
+        "cordova-plugin-console": {
+            "PACKAGE_NAME": "com.jones.template"
+        },
+        "cordova-plugin-device": {
+            "PACKAGE_NAME": "com.jones.template"
+        },
+        "cordova-plugin-dialogs": {
+            "PACKAGE_NAME": "com.jones.template"
+        },
+        "cordova-plugin-geolocation": {
+            "PACKAGE_NAME": "com.jones.template"
+        },
+        "cordova-plugin-globalization": {
+            "PACKAGE_NAME": "com.jones.template"
+        },
+        "cordova-plugin-inappbrowser": {
+            "PACKAGE_NAME": "com.jones.template"
+        },
+        "cordova-plugin-network-information": {
+            "PACKAGE_NAME": "com.jones.template"
+        },
+        "cordova-plugin-splashscreen": {
+            "PACKAGE_NAME": "com.jones.template"
+        },
+        "cordova-plugin-vibration": {
+            "PACKAGE_NAME": "com.jones.template"
+        },
+        "cordova-plugin-file": {
+            "PACKAGE_NAME": "com.palla.mysdce"
+        }
+    },
+    "dependent_plugins": {}
+}
